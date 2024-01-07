@@ -1,0 +1,223 @@
+    // Tạo input, label username
+    this.divUsername = document.createElement("div");
+    this.labelUsername = document.createElement("label");
+    this.labelUsername.innerText = "Username";
+    this.inputUsername = document.createElement("input");
+    this.inputUsername.type = "text";
+    this.inputUsername.placeholder = "Username";
+    this.inputUsername.required = true;
+
+    
+
+<div class="container">
+    <div class="wrapper">
+        <div class="title"><span>Login</span></div>
+        <form action="#">
+            <div class="row">
+                <i class="fas fa-user"></i>
+                <input type="text" placeholder="Username" required>
+            </div>
+            <div class="row">
+                <i class="fas fa-envelope"></i>
+                <input type="text" placeholder="Email or Phone" required>
+            </div>
+            <div class="row">
+                <i class="fas fa-lock"></i>
+                <input type="password" placeholder="Password" required>
+            </div>
+            <div class="pass"><a href="#">Forgot password?</a></div>
+            <div class="row button">
+                <input type="submit" value="Login">
+            </div>
+            <div class="signup-link">Not a member? <a href="#">Create account</a></div>
+        </form>
+    </div>
+</div>
+
+      register = (e) => {
+        e.preventDefault();
+        let email = this.inputEmail.value;
+        let password = this.inputPasswd.value;
+        firebase.auth()
+            .createUserWithEmailAndPassword(email, password)
+            .then((userCredentials) => {
+                if(userCredentials.user) {
+                    app.showNotification("Đăng ký thành công", true);
+                }
+            })
+            .catch((error) => {
+                app.showNotification(error, false);
+            })
+        // alert(this.inputUsername.value + '\n' + this.inputEmail.value + '\n' + this.inputPasswd.value);
+    }
+
+    goToLogin = (e) => {
+        e.preventDefault();
+        const login = new Login();
+        app.container.innerHTML = '';
+        app.changeComponent(login);
+    }
+
+
+
+
+setTimeout(() => {
+  const btn_book = document.getElementById("book-now-button");
+
+  
+}, 1000)
+
+
+// listen to the event button " book now"
+document
+  .getElementById("book-now-button")
+  .addEventListener("click", function () {
+    // create a div for pop up
+    var popup = document.createElement("div");
+    popup.classList.add("popup");
+
+    // things in pop up
+    // Thêm nội dung của popup
+    var popupContent = document.createElement("div");
+    popupContent.innerHTML =
+      "<section class='reservation' id='reservation'><form action='' method='post'><h3>Book a reservation</h3><div class='flex'><div class='box'><p>From <span>*</span></p><input type='text' name='check_in' class='input' required></div><div class='box'><p>To <span>*</span></p><input type='text' name='check_out' class='input' required></div><div class='box'><p>Depart <span>*</span></p><input type='date' name='check_in' class='input' required></div><div class='box'><p>Return <span>*</span></p><input type='date' name='check_out' class='input' required></div><div class='box'><p>adults <span>*</span></p><select name='adults' class='input' required><option value='1'>1 adult</option><option value='2'>2 adults</option><option value='3'>3 adults</option><option value='4'>4 adults</option><option value='5'>5 adults</option><option value='6'>6 adults</option></select></div><div class='box'><p>childs <span>*</span></p><select name='childs' class='input' required><option value='-'>0 child</option><option value='1'>1 child</option><option value='2'>2 childs</option><option value='3'>3 childs</option><option value='4'>4 childs</option><option value='5'>5 childs</option><option value='6'>6 childs</option></select></div><div class='box'><p>Seat type <span>*</span></p><select name='rooms' class='input' required><option value='1'>Economy class</option><option value='2'>Prenium Economy class</option><option value='3'>Business class</option><option value='4'>First class</option></select></div></div><input type='submit' value='Search Flight' name='check' class='btn'></form></section>";
+
+    // add things of popup into div popup
+    popup.appendChild(popupContent);
+
+    //add div popup to body
+    document.body.appendChild(popup);
+
+    // Tạo một lớp CSS để hiển thị popup
+    var style = document.createElement("style");
+    style.innerHTML =
+      ".popup {position: fixed;top: 0;left: 0;width: 100%;height: 100%;background-color: rgba(0, 0, 0, 0.5);display: flex;justify-content: center;align-items: center;z-index: 999;}.popup section.reservation {background-color: #fff;padding: 20px;border-radius: 10px;}";
+    document.head.appendChild(style);
+
+    // Lắng nghe sự kiện nhấn nút Done trong popup để đóng popup
+    popup
+      .querySelector("input[type='submit']")
+      .addEventListener("click", function () {
+        document.body.removeChild(popup);
+      });
+  });
+
+<form>
+  <div class="form-group">
+    <label for="exampleFormControlSelect1">Example select</label>
+    <select class="form-control" id="exampleFormControlSelect1">
+      <option>1</option>
+      <option>2</option>
+      <option>3</option>
+      <option>4</option>
+      <option>5</option>
+    </select>
+  </div>
+    <div class="form-group">
+    <label for="exampleFormControlSelect1">Example select</label>
+    <select class="form-control" id="exampleFormControlSelect1">
+      <option>1</option>
+      <option>2</option>
+      <option>3</option>
+      <option>4</option>
+      <option>5</option>
+    </select>
+  </div>
+</form>
+
+<div class='card shadow mb-5 bg-white rounded'><div class='card-body'><p class='card-title text-center shadow mb-5 rounded'>Travel Booking Form</p><div class='icons text-center'><i class='fa fa-plane fa-2x' aria-hidden='true'></i><i class='fa fa-taxi fa-2x' aria-hidden='true'></i><i class='fa fa-train fa-2x' aria-hidden='true'></i></div><hr><p class='searchText'><strong>Search For Cheap Flights</strong></p><div class='row mb-3 mt-3'><label class='radiobtn'><input type='radio' name='gender' value='male'>One Way</label><label class='radiobtn'><input type='radio' name='gender' value='male'>Round Trip</label></div><div class='row'><div class='col-sm-6'><select class='browser-default custom-select mb-4' id='select'><option value='' disabled='' selected=''>From City/Airport</option><option value='1'>Ho Chi Minh city</option><option value='2'>Ha Noi</option><option value='3'>Da Nang</option></select></div><div class='col-sm-6'><select class='browser-default custom-select mb-4' id='select'><option value='' disabled='' selected=''>To City/Airport</option><option value='1'>Ho Chi Minh city</option><option value='2'>Ha Noi</option><option value='3'>Da Nang</option></select></div></div><div class='row'><div class='col-sm-6'><input placeholder='&#xf073; Departing' type='text' id='date-picker-example'class='form-control datepicker mb-4' style='font-family:Arial, FontAwesome'></div><div class='col-sm-6'><input placeholder='&#xf073; Arriving' type='text' id='date-picker-example' class='form-control datepicker'style='font-family:Arial, FontAwesome'></div></div><div class='row'><div class='col-sm-4'><select class='browser-default custom-select mb-4' id='select'><option value='' disabled='' selected=''>Kids(0-14)</option><option value='1'>1</option><option value='2'>2</option><option value='3'>3</option></select></div><div class='col-sm-4'><select class='browser-default custom-select mb-4' id='select'><option value='' disabled='' selected=''>Adults(15-64)</option><option value='1'>1</option><option value='2'>2</option><option value='3'>3</option></select></div><div class='col-sm-4'><select class='browser-default custom-select mb-4' id='select'><option value='' disabled='' selected=''>Seniors(65+)</option><option value='1'>1</option><option value='2'>2</option><option value='3'>3</option></select></div></div><a href='#' class='btn btn-primary float-right mt-5'>Find Flights</a></div></div>
+
+
+// ==========================================================================
+
+      <div id="booking" class="section">
+		<div class="section-center">
+			<div class="container">
+				<div class="row">
+					<div class="booking-form">
+						<div class="form-header">
+							<h1>Book Your Flight</h1>
+						</div>
+						<form>
+							<div class="form-group">
+								<div class="form-checkbox">
+									<label for="roundtrip">
+										<input type="radio" id="roundtrip" name="flight-type">
+										<span></span>Roundtrip
+									</label>
+									<label for="one-way">
+										<input type="radio" id="one-way" name="flight-type">
+										<span></span>One way
+									</label>
+									<label for="multi-city">
+										<input type="radio" id="multi-city" name="flight-type">
+										<span></span>Multi-City
+									</label>
+								</div>
+							</div>
+							<div class="form-group">
+								<input class="form-control" type="text">
+								<span class="form-label">Flying from</span>
+							</div>
+							<div class="form-group">
+								<input class="form-control" type="text">
+								<span class="form-label">Flying to</span>
+							</div>
+							<div class="row">
+								<div class="col-md-6">
+									<div class="form-group">
+										<input class="form-control" type="date">
+										<span class="form-label">Check In</span>
+									</div>
+								</div>
+								<div class="col-md-6">
+									<div class="form-group">
+										<input class="form-control" type="date">
+										<span class="form-label">Check Out</span>
+									</div>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-md-4">
+									<div class="form-group">
+										<select class="form-control">
+											<option>Economy class</option>
+											<option>Business class</option>
+											<option>First class</option>
+										</select>
+										<span class="select-arrow"></span>
+										<span class="form-label">Travel class</span>
+									</div>
+								</div>
+								<div class="col-md-4">
+									<div class="form-group">
+										<select class="form-control">
+											<option>1</option>
+											<option>2</option>
+											<option>3</option>
+										</select>
+										<span class="select-arrow"></span>
+										<span class="form-label">Adults</span>
+									</div>
+								</div>
+								<div class="col-md-4">
+									<div class="form-group">
+										<select class="form-control">
+											<option>0</option>
+											<option>1</option>
+											<option>2</option>
+										</select>
+										<span class="select-arrow"></span>
+										<span class="form-label">Children</span>
+									</div>
+								</div>
+							</div>
+							<div class="form-btn">
+								<button class="submit-btn">Check availability</button>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
