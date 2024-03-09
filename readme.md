@@ -54,7 +54,7 @@ You may also see any lint errors in the console.
 | ---------------- | ---------------------------------------------- |
 | Mr.Thang         | My IT Teacher                                  |
 | Mr.Dominic       | My English Teacher                             |
-| DucThien         | My friends, also a tester of my website        |
+| Thien An         | My friends, also a tester of my website        |
 | NamPhong         | My friends, also a tester of my website        |
 | NhaUyen          | My friends, also a tester of my website        |
 | RapidApi         | Help me to find API that helpful               |
